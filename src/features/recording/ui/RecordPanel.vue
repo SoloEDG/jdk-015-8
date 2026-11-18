@@ -7,7 +7,7 @@ defineEmits<{ start: [] }>();
 <template>
   <section class="panel record-panel">
     <div class="panel-heading">
-      <span>05 / CAPTURE SESSION</span><span>1280 × 720</span>
+      <span>06 / CAPTURE SESSION</span><span>1280 × 720</span>
     </div>
     <div class="record-top">
       <div>

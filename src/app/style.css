@@ -889,3 +889,136 @@ footer i {
     gap: 20px;
   }
 }
+/* MIDI 控制器 */
+.midi-status-line {
+  margin-top: 14px;
+}
+.midi-connect {
+  width: 100%;
+  margin-top: 14px;
+  padding: 11px;
+  background: #b4a1ef;
+  border: 0;
+  color: #16121f;
+  font-weight: 600;
+  font-size: 11px;
+}
+.midi-connect:hover {
+  background: #c6b5f8;
+}
+.midi-device {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 9px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #17171f;
+}
+.midi-device.pending {
+  border-color: #5a4a7c;
+}
+.midi-device > div {
+  flex: 1;
+  min-width: 0;
+}
+.midi-device strong {
+  display: block;
+  font: 10px "Space Grotesk";
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.midi-device small {
+  margin-top: 3px;
+  font-size: 8px;
+}
+.midi-device button {
+  padding: 5px 9px;
+  font-size: 9px;
+  flex-shrink: 0;
+}
+.midi-panel h3 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 18px 0 4px;
+  font-size: 11px;
+}
+.midi-panel h3 small {
+  font-size: 8px;
+}
+.midi-map-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 2px;
+  border-bottom: 1px solid #1c1d25;
+}
+.midi-map-row > div {
+  flex: 1;
+  min-width: 0;
+}
+.midi-map-row span {
+  display: block;
+  font-size: 10px;
+  color: #a4a0b3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.midi-map-row em {
+  display: block;
+  margin-top: 2px;
+  font: 8px "Space Grotesk";
+  color: #62636f;
+  letter-spacing: 0.4px;
+}
+.midi-map-row.armed {
+  background: #211c2e;
+  border-radius: 5px;
+}
+.midi-map-row.armed em {
+  color: #c9b3f5;
+  animation: midi-pulse 1.1s infinite;
+}
+.midi-map-row button {
+  padding: 4px 7px;
+  font-size: 9px;
+  flex-shrink: 0;
+}
+.midi-map-row .clear-btn {
+  padding: 4px 6px;
+  color: #8b8c9b;
+}
+@keyframes midi-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+.midi-notice {
+  margin-top: 12px;
+  font-size: 9px;
+  color: #b7a6e0;
+  line-height: 1.6;
+}
+.midi-offline {
+  margin-top: 10px;
+}
+.midi-foot {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.midi-foot small {
+  font-size: 8px;
+  line-height: 1.7;
+}
+.midi-foot button {
+  font-size: 9px;
+  padding: 5px 8px;
+  flex-shrink: 0;
+}

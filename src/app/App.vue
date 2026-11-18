@@ -19,11 +19,13 @@ import {
   SignalMeter,
 } from "../features/live";
 import { createRecorder, RecordPanel, TakeList } from "../features/recording";
+import { createMidiStore, MidiPanel } from "../features/midi";
 const doc = createDocument(),
   audio = createAudio(doc),
   scenes = createScenes(doc),
   controls = createControls(doc),
-  recorder = createRecorder();
+  recorder = createRecorder(),
+  midi = createMidiStore(doc, scenes, controls, audio);
 const canvas = ref<HTMLCanvasElement>(),
   stage = ref<HTMLElement>();
 const fullError = ref("");
@@ -50,6 +52,7 @@ onUnmounted(() => {
   unbind();
   audio.dispose();
   recorder.dispose();
+  midi.dispose();
 });
 </script>
 <template>
@@ -124,7 +127,10 @@ onUnmounted(() => {
           :doc="doc"
           :controls="controls"
           :beat="audio.frame.value.beat"
-        /><RecordPanel :recorder="recorder" @start="start" />
+        /><MidiPanel :midi="midi" /><RecordPanel
+          :recorder="recorder"
+          @start="start"
+        />
         <div class="note">
           <Radio :size="19" />
           <p>
